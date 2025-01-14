@@ -98,13 +98,13 @@ Where \( m \) and \( n \) are pairs of matching descriptors.
 The matched keypoints are used to calculate an affine transformation matrix \( A \), which accounts for translation, scaling, rotation, and slight shearing:
 
 $$
-A, \_ = \text{estimateAffinePartial2D}(\text{dst\_pts}, \text{src\_pts}, \text{method=RANSAC})
+A, \text{\_} = \text{estimateAffinePartial2D}(\text{dst\_pts}, \text{src\_pts}, \text{method=RANSAC})
 $$
 
 Where:
-- \( A \) is the affine transformation matrix.
-- \( \text{dst\_pts} \) are the points from the target image.
-- \( \text{src\_pts} \) are the corresponding points from the reference image.
+- $A$ is the affine transformation matrix.
+- $ \text{dst\_pts}$ are the points from the target image.
+- $ \text{src\_pts} $ are the corresponding points from the reference image.
 
 ### **Step 4: Applying the Affine Transformation**
 The target image is aligned to the reference image using the affine matrix:
@@ -114,9 +114,9 @@ I_{\text{aligned}} = \text{warpAffine}(I_2, A, \text{size}(I_1))
 $$
 
 Where:
-- \( I_{\text{aligned}} \) is the aligned version of the target image.
-- \( I_2 \) is the original target image.
-- \( I_1 \) is the reference image.
+- $ I_{\text{aligned}} $ is the aligned version of the target image.
+- $ I_2 $ is the original target image.
+- $ I_1 $ is the reference image.
 
 This ensures that each pixel in the aligned image corresponds spatially to the same location as in the reference image.
 
@@ -134,10 +134,10 @@ NIR_{\text{norm}} = \left(\frac{NIR_{\text{raw}}}{65535} - \frac{BL}{65535}\righ
 $$
 
 Where:
-- \( NIR_{\text{raw}} \) is the raw pixel value.
-- \( BL \) is the black level correction (fixed at 4096).
+- $ NIR_{\text{raw}} $ is the raw pixel value.
+- $ BL $ is the black level correction (fixed at 4096).
 - Gain is the sensor gain extracted from metadata.
-- \( t_{\text{exp}} \) is the exposure time in seconds.
+- $ t_{\text{exp}} $ is the exposure time in seconds.
 
 ### **Step 2: Vignetting Correction**
 Vignetting causes a reduction in image brightness toward the edges of the image. The correction factor is computed as a polynomial function of the radial distance from the optical center:
@@ -147,12 +147,12 @@ V(r) = \sum_{i=0}^{n} c_i \cdot r^i + 1
 $$
 
 Where:
-- \( r \) is the radial distance from the optical center, calculated as:
-  \[
+- $ r $ is the radial distance from the optical center, calculated as:
+  $$
   r = \sqrt{(x - C_x)^2 + (y - C_y)^2}
-  \]
-- \( C_x, C_y \) are the coordinates of the optical center.
-- \( c_i \) are the vignetting coefficients.
+  $$
+- $ C_x, C_y $ are the coordinates of the optical center.
+- $ c_i $ are the vignetting coefficients.
 
 The normalized NIR image is corrected for vignetting as follows:
 
@@ -170,11 +170,11 @@ K = \begin{bmatrix} f_x & 0 & C_x + c_x \\
 $$
 
 Where:
-- \( f_x, f_y \) are the focal lengths.
-- \( C_x, C_y \) are the calibrated optical center coordinates.
-- \( c_x, c_y \) are offsets from the metadata.
+- $ f_x, f_y $ are the focal lengths.
+- $ C_x, C_y $ are the calibrated optical center coordinates.
+- $ c_x, c_y $ are offsets from the metadata.
 
-The distortion coefficients \( D = [k_1, k_2, p_1, p_2, k_3] \) account for both radial and tangential distortions.
+The distortion coefficients $ D = [k_1, k_2, p_1, p_2, k_3] $ account for both radial and tangential distortions.
 
 The corrected image is obtained by applying the undistortion:
 
@@ -190,8 +190,8 @@ R = \frac{NIR_{\text{undistorted}}}{E}
 $$
 
 Where:
-- \( R \) is the reflectance value.
-- \( E \) is the irradiance, calculated as the product of the NIR light sensor reading and a calibration factor:
+- $ R $ is the reflectance value.
+- $ E $ is the irradiance, calculated as the product of the NIR light sensor reading and a calibration factor:
 
 $$
 E = NIR_{LS} \times p_{LSNIR}
