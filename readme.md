@@ -77,11 +77,10 @@ Image alignment is necessary when combining different spectral bands that may ha
 ### **Step 1: Keypoint Detection**
 The ORB (Oriented FAST and Rotated BRIEF) algorithm is used to detect keypoints and compute descriptors for the images.
 
-Given two images, \( I_1 \) (reference) and \( I_2 \) (target):
-
-\[
+$$
 K_1, D_1 = ORB(I_1) \quad \text{and} \quad K_2, D_2 = ORB(I_2)
-\]
+
+$$
 
 Where:
 - \( K_1, K_2 \) are the sets of detected keypoints.
@@ -90,18 +89,18 @@ Where:
 ### **Step 2: Descriptor Matching**
 Using a FLANN-based matcher, the descriptors from the two images are compared to find corresponding keypoints. The ratio test filters matches to retain only those that meet a threshold for accuracy:
 
-\[
+$$
 \text{Good Matches} = \{m \mid m.\text{distance} < 0.8 \times n.\text{distance}\}
-\]
+$$
 
 Where \( m \) and \( n \) are pairs of matching descriptors.
 
 ### **Step 3: Affine Transformation Calculation**
 The matched keypoints are used to calculate an affine transformation matrix \( A \), which accounts for translation, scaling, rotation, and slight shearing:
 
-\[
+$$
 A, \_ = \text{estimateAffinePartial2D}(\text{dst\_pts}, \text{src\_pts}, \text{method=RANSAC})
-\]
+$$
 
 Where:
 - \( A \) is the affine transformation matrix.
@@ -111,9 +110,9 @@ Where:
 ### **Step 4: Applying the Affine Transformation**
 The target image is aligned to the reference image using the affine matrix:
 
-\[
+$$
 I_{\text{aligned}} = \text{warpAffine}(I_2, A, \text{size}(I_1))
-\]
+$$
 
 Where:
 - \( I_{\text{aligned}} \) is the aligned version of the target image.
@@ -131,9 +130,9 @@ The reflectance calculation converts the corrected pixel values from the NIR ima
 ### **Step 1: Normalization of Raw Pixel Values**
 The raw pixel values are normalized to correct for sensor-specific properties and capture settings. The normalization formula is:
 
-\[
+$$
 NIR_{\text{norm}} = \left(\frac{NIR_{\text{raw}}}{65535} - \frac{BL}{65535}\right) \times \frac{10^6}{\text{Gain} \times t_{\text{exp}}}
-\]
+$$
 
 Where:
 - \( NIR_{\text{raw}} \) is the raw pixel value.
@@ -144,9 +143,9 @@ Where:
 ### **Step 2: Vignetting Correction**
 Vignetting causes a reduction in image brightness toward the edges of the image. The correction factor is computed as a polynomial function of the radial distance from the optical center:
 
-\[
+$$
 V(r) = \sum_{i=0}^{n} c_i \cdot r^i + 1
-\]
+$$
 
 Where:
 - \( r \) is the radial distance from the optical center, calculated as:
@@ -165,11 +164,11 @@ NIR_{\text{corrected}} = NIR_{\text{norm}} \times V(r)
 ### **Step 3: Lens Distortion Correction**
 Lens distortion is corrected using the camera matrix \( K \) and distortion coefficients \( D \):
 
-\[
+$$
 K = \begin{bmatrix} f_x & 0 & C_x + c_x \\
 0 & f_y & C_y + c_y \\
 0 & 0 & 1 \end{bmatrix}
-\]
+$$
 
 Where:
 - \( f_x, f_y \) are the focal lengths.
@@ -180,23 +179,23 @@ The distortion coefficients \( D = [k_1, k_2, p_1, p_2, k_3] \) account for both
 
 The corrected image is obtained by applying the undistortion:
 
-\[
+$$
 NIR_{\text{undistorted}} = \text{undistort}(NIR_{\text{corrected}}, K, D)
-\]
+$$
 
 ### **Step 4: Reflectance Calculation**
 The final step is to calculate the reflectance values by dividing the corrected pixel values by the irradiance:
 
-\[
+$$
 R = \frac{NIR_{\text{undistorted}}}{E}
-\]
+$$
 
 Where:
 - \( R \) is the reflectance value.
 - \( E \) is the irradiance, calculated as the product of the NIR light sensor reading and a calibration factor:
-  \[
+$$
   E = NIR_{LS} \times p_{LSNIR}
-  \]
+$$
 
 The result is a radiometrically corrected image that accurately represents the reflectance properties of the observed surface.
 
