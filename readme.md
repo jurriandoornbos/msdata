@@ -79,7 +79,6 @@ The ORB (Oriented FAST and Rotated BRIEF) algorithm is used to detect keypoints 
 
 $$
 K_1, D_1 = ORB(I_1) \quad \text{and} \quad K_2, D_2 = ORB(I_2)
-
 $$
 
 Where:
@@ -193,8 +192,9 @@ $$
 Where:
 - \( R \) is the reflectance value.
 - \( E \) is the irradiance, calculated as the product of the NIR light sensor reading and a calibration factor:
+
 $$
-  E = NIR_{LS} \times p_{LSNIR}
+E = NIR_{LS} \times p_{LSNIR}
 $$
 
 The result is a radiometrically corrected image that accurately represents the reflectance properties of the observed surface.
