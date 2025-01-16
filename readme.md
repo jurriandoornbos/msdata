@@ -42,6 +42,14 @@ conda create --name msdata jupyterlab opencv numpy pandas rioxarray pillow piexi
 conda activate msdata
 ```
 
+As well as some MicaSense stuff:
+1. Install exiftool: https://exiftool.org
+2. Update python environment
+```bash
+pip install imageio PyExifTools scikit-image pysolar pyzbar ipywidgets
+```
+3. copy-paste the micasense folder from:https://github.com/micasense/imageprocessing into `notebooks`
+
 ## Usage
 There are some general notebooks going over calibration options/procedures for various sensors, based on snippets and code online available.
 
