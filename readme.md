@@ -38,20 +38,9 @@ Calibration for multispectral sensors in this repository covers `alignment` and 
 First, install [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html). Then create an environment called `msdata` like below:
 
 ```bash
-conda create --name msdata jupyterlab opencv numpy pandas rioxarray pillow piexif matplotlib tifffile
+conda create --name msdata jupyterlab opencv numpy pandas rioxarray pillow piexif matplotlib tifffile scikit-image
 conda activate msdata
 ```
-
-As well as some MicaSense stuff:
-1. Install exiftool: https://exiftool.org
-2. Update python environment
-```bash
-pip install imageio PyExifTools scikit-image pysolar pyzbar ipywidgets
-```
-3. copy-paste the micasense folder from:https://github.com/micasense/imageprocessing into `notebooks`
-
-## Usage
-There are some general notebooks going over calibration options/procedures for various sensors, based on snippets and code online available.
 
 These are:
 * `notebooks/mavic_3m.ipynb`
@@ -59,8 +48,7 @@ These are:
 * `notebooks/altum.ipynb`
 * `notebooks/rededge.ipynb`
 * `notebooks/sequoia.ipynb`
-For RedEdge, Altum and Sequoia additional panel image calibration is also included.
-
+  
 Then specifically for the included datasets according to the [paper](datainbrief.com), specific notebooks are available.
 
 ## License
