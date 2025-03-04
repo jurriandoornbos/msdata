@@ -29,9 +29,18 @@
 - [Acknowledgments](#acknowledgments)
 
 ## Summary
-Calibration procedures for various Multispectral sensors and UAVs. Used to create the large, open, pretraining dataset MSUAV.
+Calibration procedures for various Multispectral sensors and UAVs. Used to create the large, open, pretraining dataset MSUAV (link to dataset will follow).
 
-Calibration for multispectral sensors in this repository covers `alignment` and `radiance` calibration. Assuming RAW tiffs directly captured in the flight, all the necessary parameters should be in the exif tags in the raw .tif files.
+This repository serves as a starting point to work with the raw images from your MS sensor. (Parrot Sequioa, DJI 3M, DJI Phantom 4MS, MicaSense Altum (-pt), MicaSense RedEdge) But it is not an exhaustive library for immediate import into your own projects.
+
+There are various sensors calibration options here, from raw sensor to aligned image. Every notebook starts with the specific sensor used. Some datasets are built around an orthomosaic, which can be ignored for the purposes of learning the specific sensor alignment.
+
+* `notebooks/mavic_3m.ipynb`
+* `notebooks/phantom_4m.ipynb`
+* `notebooks/altum.ipynb`
+* `notebooks/rededge.ipynb`
+* `notebooks/sequoia.ipynb`'
+
 
 ## Installation
 First, install [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html). Then create an environment called `msdata` like below:
@@ -41,13 +50,6 @@ conda create --name msdata jupyterlab opencv numpy pandas rioxarray pillow piexi
 conda activate msdata
 ```
 
-There are various sensors present here, both as orthomosaic, or just as raw datasets. Every notebook starts with the specific sensor used.
-* `notebooks/mavic_3m.ipynb`
-* `notebooks/phantom_4m.ipynb`
-* `notebooks/altum.ipynb`
-* `notebooks/rededge.ipynb`
-* `notebooks/sequoia.ipynb`
-  
 
 ## Explanation of alignment and radiometric calibration
 
@@ -118,8 +120,6 @@ The `irradiance` function converts raw digital numbers from drone images into ca
    - Reflectance values are independent of illumination conditions, making them comparable across time and space.
 
 This radiometric calibration process transforms raw sensor data into standardized reflectance values that can be directly compared across different flights, times of day, and atmospheric conditions - essential for scientific applications like agricultural monitoring, environmental assessment, and temporal change detection.
-
-
 
 ## License
 Licensed under MIT License, see LICENSE file.
