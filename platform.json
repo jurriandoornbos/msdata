@@ -10,13 +10,15 @@
                 "multispectral preprocessing"
             ],
             "use_cases": [
-                "agriculture",
-                "environmental monitoring"
+                1,
+                2,
+                3,
+                4
             ],
             "description": "Python-based calibration procedures for DJI Mavic 3M, DJI Phantom 4 Multispectral, MicaSense Altum (-pt), RedEdge and Parrot Sequoia. This repository serves as a starting point to work with raw images from multispectral sensors.",
             "dataset": "MSUAV",
-            "icon": "https://raw.githubusercontent.com/ICAERUS-EU/.github/refs/heads/main/profile/ICAERUS_transparent.png",
-            "url": "https://github.com/icaerus-eu/msdata"
+            "icon": "https://github.com/jurriandoornbos/msdata/blob/main/msdata.png",
+            "url": "https://github.com/jurriandoornbos/msdata"
         },
         "model": [
             {
