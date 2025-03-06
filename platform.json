@@ -1,0 +1,66 @@
+[
+    {
+        "general": {
+            "title": "Multispectral UAV Image calibration and alignment",
+            "author": "Jurrian Doornbos",
+            "date": "2025-03-06",
+            "applications": [
+                "image alignment",
+                "radiometric calibration",
+                "multispectral preprocessing"
+            ],
+            "use_cases": [
+                "agriculture",
+                "environmental monitoring"
+            ],
+            "description": "Python-based calibration procedures for DJI Mavic 3M, DJI Phantom 4 Multispectral, MicaSense Altum (-pt), RedEdge and Parrot Sequoia. This repository serves as a starting point to work with raw images from multispectral sensors.",
+            "dataset": "MSUAV",
+            "icon": "https://raw.githubusercontent.com/ICAERUS-EU/.github/refs/heads/main/profile/ICAERUS_transparent.png",
+            "url": "https://github.com/icaerus-eu/msdata"
+        },
+        "model": [
+            {
+                "content": {
+                    "type": [
+                        "image processing",
+                        "calibration",
+                        "alignment"
+                    ],
+                    "subject": "multispectral imagery",
+                    "classes": [],
+                    "input": "raw multispectral images",
+                    "output": "aligned and calibrated multispectral images"
+                },
+                "preprocessing": {
+                    "software": [
+                        "python"
+                    ],
+                    "description": "The repository processes raw multispectral drone imagery by aligning different spectral bands and converting raw digital numbers to calibrated reflectance values."
+                },
+                "analysis": {
+                    "algorithm": "Feature-based image alignment with ORB and FLANN matching",
+                    "software": "python",
+                    "train_split": "None",
+                    "validation_split": "None",
+                    "test_split": "None",
+                    "description": "The repository uses ORB feature detection and FLANN-based matching to align spectral bands. It also performs radiometric calibration through black level subtraction, exposure time normalization, gain correction, irradiance scaling, and sunshine sensor correction."
+                },
+                "evaluation": {
+                    "metrics": [],
+                    "accuracy": "None",
+                    "description": "This is a preprocessing pipeline rather than a predictive model, so traditional evaluation metrics are not applicable."
+                }
+            }
+        ],
+        "info": {
+            "license": "MIT",
+            "paper": "",
+            "citation": [
+                "",
+                ""
+            ],
+            "contact": "https://github.com/jurriandoornbos",
+            "fundation_source": "ICAERUS"
+        }
+    }
+]
