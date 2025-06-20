@@ -31,6 +31,8 @@
 ## Summary
 Calibration procedures for various Multispectral sensors and UAVs. Used to create the large, open, pretraining dataset MSUAV (link to dataset will follow).
 
+<img src="methods_overview.png" width=400 alt="Methods overview">
+
 This repository serves as a starting point to work with the raw images from your MS sensor. (Parrot Sequioa, DJI 3M, DJI Phantom 4MS, MicaSense Altum (-pt), MicaSense RedEdge) But it is not an exhaustive library for immediate import into your own projects.
 
 There are various sensors calibration options here, from raw sensor to aligned image. Every notebook starts with the specific sensor used. Some datasets are built around an orthomosaic, which can be ignored for the purposes of learning the specific sensor alignment.
