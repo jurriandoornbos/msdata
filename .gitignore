@@ -2,6 +2,10 @@
 data/*
 notebooks/homographies/*
 notebooks/examples/*
+notebooks/ms/homographies*
+notebooks/rgb/homographies*
+notebooks/rgbms/homographies*
+notebooks/data*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
