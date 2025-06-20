@@ -8,17 +8,17 @@
     Python-based calibration procedures for DJI Mavic 3M, DJI Phantom 4 Multispectral, MicaSense Altum (-pt), RedEdge and Parrot Sequoia.
     <br/>
     <br/>
-    <a href="https://github.com/icaerus-eu/msdata/wiki"><strong>Explore the wiki »</strong></a>
+    <a href="https://github.com/jurriandoornbos/msdata/wiki"><strong>Explore the wiki »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/icaerus-eu/msdata/issues">Report Bug</a>
+    <a href="https://github.com/jurriandoornbos/msdata/issues">Report Bug</a>
     -
-    <a href="https://github.com/icaerus-eu/msdata/issues">Request Feature</a>
+    <a href="https://github.com/jurriandoornbos/msdata/issues">Request Feature</a>
   </p>
 </p>
 </div>
 
-![Downloads](https://img.shields.io/github/downloads/icaerus-eu/repo/msdata/total) ![Contributors](https://img.shields.io/github/contributors/icaerus-eu/msdata?color=dark-green) ![Forks](https://img.shields.io/github/forks/icaerus-eu/msdata?style=social) ![Stargazers](https://img.shields.io/github/stars/icaerus-eu/msdata?style=social) ![Issues](https://img.shields.io/github/issues/icaerus-eu/msdata) ![License](https://img.shields.io/github/license/icaerus-eu/msdata) 
+![Downloads](https://img.shields.io/github/downloads/jurriandoornbos/repo/msdata/total) ![Contributors](https://img.shields.io/github/contributors/jurriandoornbos/msdata?color=dark-green) ![Forks](https://img.shields.io/github/forks/jurriandoornbos/msdata?style=social) ![Stargazers](https://img.shields.io/github/stars/jurriandoornbos/msdata?style=social) ![Issues](https://img.shields.io/github/issues/jurriandoornbos/msdata) ![License](https://img.shields.io/github/license/jurriandoornbos/msdata) 
 
 ## Table Of Contents
 - [Summary](#summary)
